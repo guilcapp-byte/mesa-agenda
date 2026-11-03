@@ -8,5 +8,20 @@
       "midia/2026-11-02/01-apresentacao-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/02-como-funciona",
+    "formato": "carrossel",
+    "legenda": "Controle financeiro em 4 passos, do salário à meta.\n\n1. Contas e faturas num lugar só.\n2. Previsto e realizado, por categoria.\n3. Vencimentos no calendário e resumo semanal no e-mail.\n4. Metas, sozinho ou a dois.\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #controlefinanceiro #organizacaofinanceira",
+    "quando": "2026-11-06T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/02-como-funciona-v2-01.jpg",
+      "midia/2026-11-02/02-como-funciona-v2-02.jpg",
+      "midia/2026-11-02/02-como-funciona-v2-03.jpg",
+      "midia/2026-11-02/02-como-funciona-v2-04.jpg",
+      "midia/2026-11-02/02-como-funciona-v2-05.jpg",
+      "midia/2026-11-02/02-como-funciona-v2-06.jpg"
+    ],
+    "estado": "agendado"
   }
 ]
