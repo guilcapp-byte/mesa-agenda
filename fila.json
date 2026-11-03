@@ -59,5 +59,15 @@
       "midia/2026-11-02/05-contas-de-janeiro-v2-07.jpg"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/06-previsto-realizado",
+    "formato": "video",
+    "legenda": "Como cortar gastos: se fosse mais inteligente cortar outro gasto, como você saberia?\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #controlefinanceiro",
+    "quando": "2026-11-16T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/06-previsto-realizado-v3-narrado.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
