@@ -89,5 +89,15 @@
       "midia/2026-11-02/08-meta-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/09-oferta",
+    "formato": "estatico",
+    "legenda": "App de controle financeiro: R$ 99 vitalício para os 100 primeiros.\n\nPagamento único. Fixas, faturas e objetivos num lugar só, sozinho ou a dois.\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #controlefinanceiro #financasdocasal",
+    "quando": "2026-11-23T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/09-oferta-v2-01.jpg"
+    ],
+    "estado": "agendado"
   }
 ]
