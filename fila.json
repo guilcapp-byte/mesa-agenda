@@ -23,5 +23,15 @@
       "midia/2026-11-02/02-como-funciona-v2-06.jpg"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/03-dor-fim-do-mes",
+    "formato": "video",
+    "legenda": "Controle de gastos: o salário caiu e já acabou?\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #controlefinanceiro",
+    "quando": "2026-11-09T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/03-dor-fim-do-mes-v3-narrado.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
