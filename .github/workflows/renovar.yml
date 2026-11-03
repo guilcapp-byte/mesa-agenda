@@ -1,0 +1,23 @@
+name: Renovar o token
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Renovar e guardar no cofre
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          novo="$(python publicar.py --renovar)"
+          echo "::add-mask::$novo"
+          gh secret set IG_TOKEN --body "$novo"
