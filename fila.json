@@ -79,5 +79,15 @@
       "midia/2026-11-02/07-meio-a-meio-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/08-meta",
+    "formato": "video",
+    "legenda": "Como guardar dinheiro para uma meta: qual é a sua meta pessoal? Conta aqui nos comentários.\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #educacaofinanceira",
+    "quando": "2026-11-20T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/08-meta-v3-narrado.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
