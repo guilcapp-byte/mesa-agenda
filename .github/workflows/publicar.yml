@@ -26,8 +26,7 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-        run: python publicar.py
+        run: SITE="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}" python publicar.py
       # Salva o resultado mesmo com erro, para a mesma peça nunca sair duas vezes.
       - name: Salvar o resultado
         run: |
