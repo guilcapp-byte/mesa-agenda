@@ -1,0 +1,30 @@
+name: Testar a conexão
+
+on:
+  push:
+    paths:
+      - teste/pedido.txt
+
+permissions:
+  contents: write
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testar sem publicar
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          SITE="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}" python publicar.py --testar | tee teste/resultado.txt
+          git config user.name "Cappataz"
+          git config user.email "cappataz@users.noreply.github.com"
+          git add teste/resultado.txt
+          git commit -m "Resultado do teste"
+          git pull --rebase
+          git push
