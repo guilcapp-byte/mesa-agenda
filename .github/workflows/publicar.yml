@@ -1,0 +1,40 @@
+name: Publicar a fila
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: fila
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publicar o que venceu
+        id: publicar
+        continue-on-error: true
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: python publicar.py
+      # Salva o resultado mesmo com erro, para a mesma peça nunca sair duas vezes.
+      - name: Salvar o resultado
+        run: |
+          git config user.name "Cappataz"
+          git config user.email "cappataz@users.noreply.github.com"
+          git add fila.json
+          git diff --cached --quiet || { git commit -m "Atualiza a fila"; git pull --rebase; git push; }
+      - name: Avisar se houve erro
+        if: steps.publicar.outcome == 'failure'
+        run: exit 1
