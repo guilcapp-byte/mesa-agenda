@@ -43,5 +43,21 @@
       "midia/2026-11-02/04-juros-por-atraso-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/05-contas-de-janeiro",
+    "formato": "carrossel",
+    "legenda": "Contas de janeiro: IPVA, IPTU, material escolar e seguros. Salve para não esquecer.\n\nAs datas mudam conforme o estado e a cidade: confira as suas. Os valores são só um exemplo.\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #organizacaofinanceira #educacaofinanceira",
+    "quando": "2026-11-13T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/05-contas-de-janeiro-v2-01.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-02.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-03.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-04.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-05.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-06.jpg",
+      "midia/2026-11-02/05-contas-de-janeiro-v2-07.jpg"
+    ],
+    "estado": "agendado"
   }
 ]
