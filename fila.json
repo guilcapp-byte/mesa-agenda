@@ -69,5 +69,15 @@
       "midia/2026-11-02/06-previsto-realizado-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/07-meio-a-meio",
+    "formato": "video",
+    "legenda": "Dividir as contas do casal: meio a meio é justo? Conta aqui nos comentários como funciona na sua casa.\n\nTodas as contas na mesa. 🪑\n\n#financasdocasal #financaspessoais",
+    "quando": "2026-11-18T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/07-meio-a-meio-v3-narrado.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
