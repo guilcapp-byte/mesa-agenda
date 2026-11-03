@@ -1,8 +1,7 @@
 """Roda no GitHub Actions: publica no Instagram as peças da fila cujo horário já chegou.
 
-Uso: python publicar.py          publica o que estiver vencido em fila.json
-     python publicar.py --renovar  renova o token e imprime o novo, sem publicar
-Variáveis: IG_TOKEN, IG_USER_ID e SITE (endereço público dos arquivos).
+Uso: python publicar.py   publica o que estiver vencido em fila.json
+Variáveis: IG_TOKEN (token de usuário do sistema, sem validade), IG_USER_ID e SITE (endereço público dos arquivos).
 """
 import json
 import os
@@ -14,7 +13,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-API = "https://graph.instagram.com/v26.0"
+API = "https://graph.facebook.com/v26.0"
 FILA = Path(__file__).with_name("fila.json")
 MAX_TENTATIVAS = 3
 ESPERA_STATUS = 15  # segundos entre as consultas do processamento da mídia
@@ -102,20 +101,9 @@ def rodar_fila(fila, agora, usuario, token, site):
     return falhas
 
 
-def renovar(token):
-    # O token dura 60 dias; cada renovação vale por mais 60.
-    consulta = urllib.parse.urlencode({"grant_type": "ig_refresh_token", "access_token": token})
-    with urllib.request.urlopen(f"https://graph.instagram.com/refresh_access_token?{consulta}", timeout=60) as resposta:
-        return json.load(resposta)["access_token"]
-
-
 def main():
-    token = os.environ["IG_TOKEN"]
-    if "--renovar" in sys.argv:
-        print(renovar(token))
-        return 0
     fila = json.loads(FILA.read_text(encoding="utf-8"))
-    falhas = rodar_fila(fila, datetime.now(timezone.utc), os.environ["IG_USER_ID"], token, os.environ["SITE"])
+    falhas = rodar_fila(fila, datetime.now(timezone.utc), os.environ["IG_USER_ID"], os.environ["IG_TOKEN"], os.environ["SITE"])
     FILA.write_text(json.dumps(fila, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 1 if falhas else 0
 
