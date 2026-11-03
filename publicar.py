@@ -101,7 +101,42 @@ def rodar_fila(fila, agora, usuario, token, site):
     return falhas
 
 
+def esperar_site(url):
+    """O site do GitHub demora um pouco para mostrar um arquivo recém-enviado."""
+    for _ in range(20):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as resposta:
+                print(f"  {url}: HTTP {resposta.status} | {resposta.headers.get('Content-Type')}", flush=True)
+                return
+        except urllib.error.URLError:
+            time.sleep(15)
+    raise ErroPublicacao(f"o arquivo não apareceu no site: {url}")
+
+
+def testar(usuario, token, site):
+    """Confere a conta, a permissão e o envio de mídia. Nunca chama media_publish."""
+    print("conta:", chamar(f"/{usuario}?fields=username", token=token).get("username"), flush=True)
+    print("limite:", json.dumps(chamar(f"/{usuario}/content_publishing_limit", token=token)), flush=True)
+    base = site.rstrip("/")
+    esperar_site(f"{base}/teste/imagem.jpg")
+    imagem = criar_conteiner(usuario, token, {"image_url": f"{base}/teste/imagem.jpg", "caption": "teste"})
+    esperar_conteiner(imagem, token)
+    print("imagem: a Meta aceitou, sem publicar", flush=True)
+    esperar_site(f"{base}/teste/reel.mp4")
+    reel = criar_conteiner(usuario, token, {"media_type": "REELS", "video_url": f"{base}/teste/reel.mp4", "caption": "teste"})
+    esperar_conteiner(reel, token)
+    print("reel: a Meta aceitou, sem publicar", flush=True)
+
+
 def main():
+    if "--testar" in sys.argv:
+        try:
+            testar(os.environ["IG_USER_ID"], os.environ["IG_TOKEN"], os.environ["SITE"])
+            print("RESULTADO: tudo certo")
+            return 0
+        except (ErroPublicacao, urllib.error.URLError, KeyError) as e:
+            print(f"RESULTADO: erro: {e}")
+            return 1
     fila = json.loads(FILA.read_text(encoding="utf-8"))
     falhas = rodar_fila(fila, datetime.now(timezone.utc), os.environ["IG_USER_ID"], os.environ["IG_TOKEN"], os.environ["SITE"])
     FILA.write_text(json.dumps(fila, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
