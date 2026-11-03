@@ -33,5 +33,15 @@
       "midia/2026-11-02/03-dor-fim-do-mes-v3-narrado.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "Mesa/2026-11-02/04-juros-por-atraso",
+    "formato": "video",
+    "legenda": "Juros por atraso: quanto você paga no ano por pequenos atrasos?\n\nTodas as contas na mesa. 🪑\n\n👉 Link na bio para conhecer.\n\n#financaspessoais #controlefinanceiro",
+    "quando": "2026-11-11T22:00:00+00:00",
+    "arquivos": [
+      "midia/2026-11-02/04-juros-por-atraso-v3-narrado.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
