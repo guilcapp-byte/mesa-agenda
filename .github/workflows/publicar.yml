@@ -26,6 +26,8 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN_PORTRAS: ${{ secrets.IG_TOKEN_PORTRAS }}
+          IG_USER_ID_PORTRAS: ${{ secrets.IG_USER_ID_PORTRAS }}
         run: SITE="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}" python publicar.py
       # Salva o resultado mesmo com erro, para a mesma peça nunca sair duas vezes.
       - name: Salvar o resultado
