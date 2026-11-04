@@ -1,7 +1,8 @@
 """Roda no GitHub Actions: publica no Instagram as peças da fila cujo horário já chegou.
 
 Uso: python publicar.py   publica o que estiver vencido em fila.json
-Variáveis: IG_TOKEN (token de usuário do sistema, sem validade), IG_USER_ID e SITE (endereço público dos arquivos).
+Variáveis: as de CONTAS, com o ID e o token de cada conta do Instagram, e SITE (endereço público dos arquivos).
+Peça sem "conta" na fila é da Mesa.
 """
 import json
 import os
@@ -18,6 +19,10 @@ FILA = Path(__file__).with_name("fila.json")
 MAX_TENTATIVAS = 3
 ESPERA_STATUS = 15  # segundos entre as consultas do processamento da mídia
 LIMITE_STATUS = 40  # consultas: 10 minutos
+CONTAS = {
+    "mesa": ("IG_USER_ID", "IG_TOKEN"),
+    "portras": ("IG_USER_ID_PORTRAS", "IG_TOKEN_PORTRAS"),
+}
 
 
 class ErroPublicacao(Exception):
@@ -80,12 +85,18 @@ def vencidas(fila, agora):
     return sorted(pendentes, key=lambda p: p["quando"])
 
 
-def rodar_fila(fila, agora, usuario, token, site):
+def credenciais(conta):
+    variavel_id, variavel_token = CONTAS[conta]
+    return os.environ[variavel_id], os.environ[variavel_token]
+
+
+def rodar_fila(fila, agora, site):
     """Publica as vencidas e anota o resultado em cada peça. Devolve quantas falharam."""
     falhas = 0
     for peca in vencidas(fila, agora):
         print(f'- {peca["id"]} ({peca["quando"]})', flush=True)
         try:
+            usuario, token = credenciais(peca.get("conta", "mesa"))
             peca["media_id"] = publicar_peca(peca, usuario, token, site)
             peca["estado"] = "publicado"
             peca["publicado_em"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -131,14 +142,16 @@ def testar(usuario, token, site):
 def main():
     if "--testar" in sys.argv:
         try:
-            testar(os.environ["IG_USER_ID"], os.environ["IG_TOKEN"], os.environ["SITE"])
+            for conta in CONTAS:
+                print(f"== {conta}", flush=True)
+                testar(*credenciais(conta), os.environ["SITE"])
             print("RESULTADO: tudo certo")
             return 0
         except (ErroPublicacao, urllib.error.URLError, KeyError) as e:
             print(f"RESULTADO: erro: {e}")
             return 1
     fila = json.loads(FILA.read_text(encoding="utf-8"))
-    falhas = rodar_fila(fila, datetime.now(timezone.utc), os.environ["IG_USER_ID"], os.environ["IG_TOKEN"], os.environ["SITE"])
+    falhas = rodar_fila(fila, datetime.now(timezone.utc), os.environ["SITE"])
     FILA.write_text(json.dumps(fila, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 1 if falhas else 0
 
