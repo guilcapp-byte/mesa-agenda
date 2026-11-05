@@ -112,5 +112,16 @@
       "midia/ptp/ep02_overbooking.mp4"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "PTP/ep03",
+    "conta": "portras",
+    "formato": "video",
+    "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
+    "quando": "2026-11-06T22:00:00+00:00",
+    "arquivos": [
+      "midia/ptp/ep03_bagagem.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
