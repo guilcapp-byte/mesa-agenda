@@ -101,5 +101,16 @@
       "midia/2026-11-02/09-oferta-v2-01.jpg"
     ],
     "estado": "agendado"
+  },
+  {
+    "id": "PTP/ep02",
+    "conta": "portras",
+    "formato": "video",
+    "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
+    "quando": "2026-11-05T11:29:07+00:00",
+    "arquivos": [
+      "midia/ptp/ep02_overbooking.mp4"
+    ],
+    "estado": "agendado"
   }
 ]
