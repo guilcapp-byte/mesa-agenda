@@ -63,6 +63,15 @@ def publicar_peca(peca, usuario, token, site):
     legenda = peca["legenda"]
     if peca["formato"] == "video":
         dados = {"media_type": "REELS", "video_url": urls[0], "caption": legenda, "share_to_feed": "true"}
+        if peca.get("capa"):
+            try:
+                conteiner = criar_conteiner(usuario, token, {**dados, "cover_url": f"{site.rstrip('/')}/{urllib.parse.quote(peca['capa'])}"})
+                esperar_conteiner(conteiner, token)
+                return chamar(f"/{usuario}/media_publish", {"creation_id": conteiner}, token)["id"]
+            except ErroPublicacao as e:
+                # Sem a capa, o post sai assim mesmo; o aviso fica anotado na peça.
+                peca["aviso"] = f"saiu sem capa: {e}"[:500]
+                print(f"  AVISO: {peca['aviso']}", flush=True)
         conteiner = criar_conteiner(usuario, token, dados)
     elif peca["formato"] == "estatico":
         conteiner = criar_conteiner(usuario, token, {"image_url": urls[0], "caption": legenda})
@@ -81,7 +90,7 @@ def publicar_peca(peca, usuario, token, site):
 
 
 def vencidas(fila, agora):
-    pendentes = [p for p in fila if p["estado"] == "agendado" and datetime.fromisoformat(p["quando"]) <= agora]
+    pendentes = [p for p in fila if p["estado"] in ("agendado", "aguardando") and datetime.fromisoformat(p["quando"]) <= agora]
     return sorted(pendentes, key=lambda p: p["quando"])
 
 
@@ -91,10 +100,17 @@ def credenciais(conta):
 
 
 def rodar_fila(fila, agora, site):
-    """Publica as vencidas e anota o resultado em cada peça. Devolve quantas falharam."""
+    """Publica as vencidas e anota o resultado em cada peça. Devolve quantas falharam ou saíram com aviso."""
     falhas = 0
     for peca in vencidas(fila, agora):
         print(f'- {peca["id"]} ({peca["quando"]})', flush=True)
+        # Peça sem vídeo no horário não sai: fica marcada e o GitHub avisa por e-mail.
+        if peca["estado"] == "aguardando":
+            peca["estado"] = "faltou"
+            peca["erro"] = "o vídeo não estava na pasta no horário"
+            print("  FALTOU: o vídeo não estava na pasta no horário", flush=True)
+            falhas += 1
+            continue
         try:
             usuario, token = credenciais(peca.get("conta", "mesa"))
             peca["media_id"] = publicar_peca(peca, usuario, token, site)
@@ -102,6 +118,7 @@ def rodar_fila(fila, agora, site):
             peca["publicado_em"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             peca.pop("erro", None)
             print(f'  publicado: {peca["media_id"]}', flush=True)
+            falhas += 1 if peca.get("aviso") else 0
         except (ErroPublicacao, urllib.error.URLError, KeyError) as e:
             falhas += 1
             peca["tentativas"] = peca.get("tentativas", 0) + 1
