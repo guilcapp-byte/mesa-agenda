@@ -124,7 +124,9 @@
     "arquivos": [
       "midia/ptp/ep03_bagagem.mp4"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18122008100057979",
+    "publicado_em": "2026-11-05T22:39:33+00:00"
   },
   {
     "id": "PTP/ep04",
