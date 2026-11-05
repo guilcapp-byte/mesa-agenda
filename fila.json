@@ -111,7 +111,9 @@
     "arquivos": [
       "midia/ptp/ep02_overbooking.mp4"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18119202779085608",
+    "publicado_em": "2026-11-05T12:22:51+00:00"
   },
   {
     "id": "PTP/ep03",
