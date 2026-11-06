@@ -24,7 +24,9 @@
       "midia/2026-11-02/02-como-funciona-v2-05.jpg",
       "midia/2026-11-02/02-como-funciona-v2-06.jpg"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "17979731907133852",
+    "publicado_em": "2026-11-06T22:15:07+00:00"
   },
   {
     "id": "Mesa/2026-11-02/03-dor-fim-do-mes",
@@ -146,9 +148,10 @@
     "conta": "portras",
     "formato": "video",
     "arquivos": [],
-    "estado": "aguardando",
+    "estado": "faltou",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-06T22:00:00+00:00"
+    "quando": "2026-11-06T22:00:00+00:00",
+    "erro": "o vídeo não estava na pasta no horário"
   },
   {
     "id": "PTP/ep06",
