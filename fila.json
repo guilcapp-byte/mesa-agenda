@@ -137,7 +137,9 @@
     "arquivos": [
       "midia/ptp/ep04_impressora.mp4"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18116053133273623",
+    "publicado_em": "2026-11-06T15:39:17+00:00"
   },
   {
     "id": "PTP/ep05",
