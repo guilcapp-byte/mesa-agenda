@@ -147,31 +147,34 @@
     "id": "PTP/ep05",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "faltou",
+    "arquivos": [
+      "midia/ptp/ep05_lamina.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-06T22:00:00+00:00",
-    "erro": "o vídeo não estava na pasta no horário"
+    "quando": "2026-11-07T23:00:00+00:00"
   },
   {
     "id": "PTP/ep06",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "faltou",
+    "arquivos": [
+      "midia/ptp/ep06_desconto.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-07T15:00:00+00:00",
-    "erro": "o vídeo não estava na pasta no horário"
+    "quando": "2026-11-08T01:00:00+00:00"
   },
   {
     "id": "PTP/ep07",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "faltou",
+    "arquivos": [
+      "midia/ptp/ep07_terco-de-libra.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-07T22:00:00+00:00",
-    "erro": "o vídeo não estava na pasta no horário"
+    "quando": "2026-11-08T15:00:00+00:00"
   },
   {
     "id": "PTP/ep08",
@@ -180,7 +183,7 @@
     "arquivos": [],
     "estado": "aguardando",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-08T15:00:00+00:00"
+    "quando": "2026-11-08T22:00:00+00:00"
   },
   {
     "id": "PTP/ep09",
@@ -189,7 +192,7 @@
     "arquivos": [],
     "estado": "aguardando",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-08T22:00:00+00:00"
+    "quando": "2026-11-09T15:00:00+00:00"
   },
   {
     "id": "PTP/ep10",
