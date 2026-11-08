@@ -176,9 +176,11 @@
     "arquivos": [
       "midia/ptp/ep07_terco-de-libra.mp4"
     ],
-    "estado": "agendado",
+    "estado": "publicado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-08T15:00:00+00:00"
+    "quando": "2026-11-08T15:00:00+00:00",
+    "media_id": "17886061065522649",
+    "publicado_em": "2026-11-08T15:05:00+00:00"
   },
   {
     "id": "PTP/ep08",
