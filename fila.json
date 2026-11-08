@@ -186,8 +186,10 @@
     "id": "PTP/ep08",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "aguardando",
+    "arquivos": [
+      "midia/ptp/ep08_cassino.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
     "quando": "2026-11-08T22:00:00+00:00"
   },
@@ -195,8 +197,10 @@
     "id": "PTP/ep09",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "aguardando",
+    "arquivos": [
+      "midia/ptp/ep09_cartao.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
     "quando": "2026-11-09T15:00:00+00:00"
   },
@@ -204,8 +208,10 @@
     "id": "PTP/ep10",
     "conta": "portras",
     "formato": "video",
-    "arquivos": [],
-    "estado": "aguardando",
+    "arquivos": [
+      "midia/ptp/ep10_ingresso.mp4"
+    ],
+    "estado": "agendado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
     "quando": "2026-11-09T22:00:00+00:00"
   },
