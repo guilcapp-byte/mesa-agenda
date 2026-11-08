@@ -163,9 +163,11 @@
     "arquivos": [
       "midia/ptp/ep06_desconto.mp4"
     ],
-    "estado": "agendado",
+    "estado": "publicado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-08T01:00:00+00:00"
+    "quando": "2026-11-08T01:00:00+00:00",
+    "media_id": "18348753403256808",
+    "publicado_em": "2026-11-08T01:54:28+00:00"
   },
   {
     "id": "PTP/ep07",
