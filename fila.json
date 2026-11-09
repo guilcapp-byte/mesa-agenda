@@ -202,9 +202,11 @@
     "arquivos": [
       "midia/ptp/ep09_cartao.mp4"
     ],
-    "estado": "agendado",
+    "estado": "publicado",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-09T15:00:00+00:00"
+    "quando": "2026-11-09T15:00:00+00:00",
+    "media_id": "18061186247802317",
+    "publicado_em": "2026-11-09T15:22:37+00:00"
   },
   {
     "id": "PTP/ep10",
