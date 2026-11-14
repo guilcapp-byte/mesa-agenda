@@ -66,7 +66,9 @@
       "midia/2026-11-02/05-contas-de-janeiro-v2-06.jpg",
       "midia/2026-11-02/05-contas-de-janeiro-v2-07.jpg"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18457665601130370",
+    "publicado_em": "2026-11-14T01:59:41+00:00"
   },
   {
     "id": "Mesa/2026-11-02/06-previsto-realizado",
@@ -260,9 +262,10 @@
     "conta": "portras",
     "formato": "video",
     "arquivos": [],
-    "estado": "aguardando",
+    "estado": "faltou",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-13T22:00:00+00:00"
+    "quando": "2026-11-13T22:00:00+00:00",
+    "erro": "o vídeo não estava na pasta no horário"
   },
   {
     "id": "PTP/ep15",
