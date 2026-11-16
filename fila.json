@@ -78,7 +78,9 @@
     "arquivos": [
       "midia/2026-11-02/06-previsto-realizado-v3-narrado.mp4"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18136254007792495",
+    "publicado_em": "2026-11-16T22:59:28+00:00"
   },
   {
     "id": "Mesa/2026-11-02/07-meio-a-meio",
@@ -292,9 +294,10 @@
     "conta": "portras",
     "formato": "video",
     "arquivos": [],
-    "estado": "aguardando",
+    "estado": "faltou",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-16T22:00:00+00:00"
+    "quando": "2026-11-16T22:00:00+00:00",
+    "erro": "o vídeo não estava na pasta no horário"
   },
   {
     "id": "PTP/ep18",
