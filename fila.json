@@ -90,7 +90,9 @@
     "arquivos": [
       "midia/2026-11-02/07-meio-a-meio-v3-narrado.mp4"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "17958085089035707",
+    "publicado_em": "2026-11-19T02:43:14+00:00"
   },
   {
     "id": "Mesa/2026-11-02/08-meta",
@@ -314,9 +316,10 @@
     "conta": "portras",
     "formato": "video",
     "arquivos": [],
-    "estado": "aguardando",
+    "estado": "faltou",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-18T22:00:00+00:00"
+    "quando": "2026-11-18T22:00:00+00:00",
+    "erro": "o vídeo não estava na pasta no horário"
   },
   {
     "id": "PTP/ep20",
