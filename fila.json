@@ -114,7 +114,9 @@
     "arquivos": [
       "midia/2026-11-02/09-oferta-v2-01.jpg"
     ],
-    "estado": "agendado"
+    "estado": "publicado",
+    "media_id": "18454859752133831",
+    "publicado_em": "2026-11-23T23:15:28+00:00"
   },
   {
     "id": "PTP/ep02",
@@ -368,9 +370,10 @@
     "conta": "portras",
     "formato": "video",
     "arquivos": [],
-    "estado": "aguardando",
+    "estado": "faltou",
     "legenda": "Todo preço tem uma história que ninguém te conta. 🏷️\nSegue pra ver uma nova todo dia.\n\n#portrasdopreco #economia #curiosidades",
-    "quando": "2026-11-23T22:00:00+00:00"
+    "quando": "2026-11-23T22:00:00+00:00",
+    "erro": "o vídeo não estava na pasta no horário"
   },
   {
     "id": "PTP/ep25",
